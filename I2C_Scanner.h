@@ -8,7 +8,7 @@
 /*
  * Code for I2C Scanner on CREPP.io
  */
-#define BME280_ADDRESS 0x3
+#define BME280_ADDRESS 0x68
 #define OLED_ADDRESS 0x3C
 #define ADS1115_ADDRESS_1 0x48
 #define ADS1115_ADDRESS_2 0x49
@@ -19,7 +19,8 @@ inline void I2C_Scan() {
 
   byte error, address;
   int nDevices;
-
+  Serial.flush();
+  delay(100);
   Serial.println("Scanning device on CREPP.io board...");
 
   nDevices = 0;
@@ -41,6 +42,14 @@ inline void I2C_Scan() {
       {
         Serial.print(" - OLED screen");
       }
+      if(address == ADS1115_ADDRESS_1 || address == ADS1115_ADDRESS_2)
+      {
+        Serial.print(" - ADS1115 device");
+      }
+      if(address == BME280_ADDRESS)
+      {
+        Serial.print(" - BME280 sensor");
+      }      
       Serial.println("  !");
 
       nDevices++;
