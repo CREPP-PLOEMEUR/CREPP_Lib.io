@@ -8,7 +8,7 @@
 /*
  * Code for I2C Scanner on CREPP.io
  */
-#define BME280_ADDRESS 0x68
+#define BME280_ADDRESS 0x76
 #define OLED_ADDRESS 0x3C
 #define ADS1115_ADDRESS_1 0x48
 #define ADS1115_ADDRESS_2 0x49
