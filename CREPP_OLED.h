@@ -16,11 +16,11 @@
 #include <Adafruit_SSD1306.h>
 
 
-Adafruit_SSD1306 display(128, 64, &Wire, -1);
+Adafruit_SSD1306 crepp_display(128, 64, &Wire, -1);
 
 inline void OLED_Init() {
 
-  bool status_OLED = display.begin(SSD1306_SWITCHCAPVCC, CREPP_SCREEN_ADDRESS);
+  bool status_OLED = crepp_crepp_display.begin(SSD1306_SWITCHCAPVCC, CREPP_SCREEN_ADDRESS);
    if (!status_OLED) 
   {
     Serial.println("Could not find a valid OLED sensor, check wiring!");
@@ -30,31 +30,31 @@ inline void OLED_Init() {
     Serial.println("Found a valid OLED sensor");
   }
   delay(10);
-  display.clearDisplay();
-  display.setRotation(2);
-  display.setTextSize(1);               //Size factor
-  display.setCursor(0, 0);              //Set cursor to (0,0)
-  display.setTextColor(SSD1306_WHITE);  //White text
+  crepp_display.clearDisplay();
+  crepp_display.setRotation(2);
+  crepp_display.setTextSize(1);               //Size factor
+  crepp_display.setCursor(0, 0);              //Set cursor to (0,0)
+  crepp_display.setTextColor(SSD1306_WHITE);  //White text
 
 }
 
 inline void OLED_Clear()
 {
-  display.clearDisplay();
-  display.setCursor(0, 0); 
-  display.display();
+  crepp_display.clearDisplay();
+  crepp_display.setCursor(0, 0); 
+  crepp_display.display();
 }
 
 inline void OLED_Println(String str)
 {
-  display.println(str);
-  display.display();
+  crepp_display.println(str);
+  crepp_display.display();
 }
 
 inline void OLED_Print(String str)
 {
-  display.print(str);
-  display.display();
+  crepp_display.print(str);
+  crepp_display.display();
 }
 
 
