@@ -20,7 +20,7 @@ Adafruit_SSD1306 crepp_display(128, 64, &Wire, -1);
 
 inline void OLED_Init() {
 
-  bool status_OLED = crepp_crepp_display.begin(SSD1306_SWITCHCAPVCC, CREPP_SCREEN_ADDRESS);
+  bool status_OLED = crepp_display.begin(SSD1306_SWITCHCAPVCC, CREPP_SCREEN_ADDRESS);
    if (!status_OLED) 
   {
     Serial.println("Could not find a valid OLED sensor, check wiring!");
